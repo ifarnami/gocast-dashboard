@@ -10,6 +10,9 @@ export const getDesignTokens: GetDesignTokens = (mode) => ({
       ? {
           primary: { main: "#5041BC" },
           divider: "#8A7DD0",
+          background: {
+            default: "#FFFFFF",
+          },
           text: {
             primary: "#5041BC",
             secondary: "#797D8C",
@@ -21,6 +24,10 @@ export const getDesignTokens: GetDesignTokens = (mode) => ({
           primary: { main: "#242038" },
           secondary: { main: "#E76374" },
           divider: "#3A364C",
+          background: {
+            default: "#17152C",
+            paper: "#242038",
+          },
           text: {
             primary: "#797D8C",
             white: "#FFFFFF",
