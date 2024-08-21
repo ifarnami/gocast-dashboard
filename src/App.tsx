@@ -1,10 +1,8 @@
 import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import User from "./Pages/User";
-import {Home} from "./Pages/Home";  
-import React from 'react';
-
-
+import { Home } from "./Pages/Home";
+import React from "react";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +12,7 @@ const App: React.FC = () => {
         <Route path="/User" element={<User />} />
       </Routes>
     </BrowserRouter>
+    
   );
 };
 

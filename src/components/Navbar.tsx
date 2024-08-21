@@ -14,10 +14,8 @@ import {
 import AccountBoxSharpIcon from "@mui/icons-material/AccountBoxSharp";
 import { Mail, Notifications } from "@mui/icons-material";
 
-
-
 const StyledToolBar = styled(Toolbar)({
-  direction:"ltr",
+  direction: "ltr",
   display: "flex",
   justifyContent: "space-between",
 });
@@ -27,7 +25,7 @@ const Search = styled("div")(({ theme }) => ({
   padding: "0 10px",
   borderRadius: theme.shape.borderRadius,
   width: "20%",
-  direction:"ltr"
+  direction: "ltr",
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
@@ -54,14 +52,14 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <AppBar position="sticky" >
-      <StyledToolBar >
-        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block"} }}>
+    <AppBar position="sticky">
+      <StyledToolBar>
+        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
           MUI DEV
         </Typography>
-        <AccountBoxSharpIcon sx={{display: { xs: "block", sm: "none" } }} />
+        <AccountBoxSharpIcon sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
-          <InputBase sx={{Directions:"ltr"}} placeholder="search..." />
+          <InputBase sx={{ Directions: "ltr" }} placeholder="search..." />
         </Search>
         <Icons>
           <Badge badgeContent={4} color="error">
@@ -73,7 +71,6 @@ const Navbar: React.FC = () => {
           <Avatar
             sx={{ width: 30, height: 30 }}
             alt="Travis Howard"
-            
             src="/static/images/avatar/2.jpg"
             onClick={() => setOpen(true)}
           />
