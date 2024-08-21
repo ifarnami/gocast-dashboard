@@ -8,12 +8,13 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
+import MainLayout from "../layouts/mainLayout/MainLayout";
 
 const style = {
   p: 0,
   position: "fixed",
   width: "100%",
-  marginTop: "130px",
+  marginTop: "150px",
   maxWidth: 360,
   borderRadius: 2,
   border: "1px solid",
@@ -23,28 +24,31 @@ const style = {
 
 function Rightbar() {
   return (
-    <Box flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box flex={2} p={2}>
       <Box position="fixed">
-        <Typography variant="h6" fontWeight={100} mb={2}>
-          کاربران انلاین :
-        </Typography>
-        <AvatarGroup total={24}>
-          <Avatar
-            alt="Remy Sharp"
-            src="https://material-ui.com/static/images/avatar/1.jpg"
-          />
-          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-          <Avatar
-            alt="Agnes Walker"
-            src="https://material-ui.com/static/images/avatar/4.jpg"
-          />
-          <Avatar
-            alt="Trevor Henderson"
-            src="https://material-ui.com/static/images/avatar/5.jpg"
-          />
-        </AvatarGroup>
+        <MainLayout>
+          <Typography variant="h6" fontWeight={100} mb={2} mt={1} mr={"200px"}>
+            کاربران انلاین :
+          </Typography>
+          <AvatarGroup total={24}>
+            <Avatar
+              alt="Remy Sharp"
+              src="https://material-ui.com/static/images/avatar/1.jpg"
+            />
+            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+            <Avatar
+              alt="Agnes Walker"
+              src="https://material-ui.com/static/images/avatar/4.jpg"
+            />
+            <Avatar
+              alt="Trevor Henderson"
+              src="https://material-ui.com/static/images/avatar/5.jpg"
+            />
+          </AvatarGroup>
+        </MainLayout>
       </Box>
       <Divider />
+
       <List sx={style} aria-label="mailbox folders">
         <ListItem>
           <ListItemText primary="ایمیل ها" />

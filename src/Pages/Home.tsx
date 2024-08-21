@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Box,
   Stack,
-  Card,
   CardHeader,
   IconButton,
   CardContent,
@@ -15,11 +14,12 @@ import Navbar from "../components/Navbar";
 import Rightbar from "../components/Rightbar";
 import Sidebar from "../components/Sidebar";
 
+import MainLayout from "../layouts/mainLayout/MainLayout";
+
 type Mode = "light" | "dark";
 
 export const Home: React.FC = () => {
   const [mode, setMode] = useState<Mode>("light");
-
   const theme = createTheme({
     direction: "rtl",
     palette: {
@@ -35,7 +35,7 @@ export const Home: React.FC = () => {
           <Sidebar setMode={setMode} mode={mode} />
           <Box>
             <Feed />
-            <Card sx={{ minWidth: 800, minHeight: "400px", padding: "40px" }}>
+            <MainLayout>
               <CardHeader
                 action={<IconButton aria-label="settings"></IconButton>}
                 title="کاربران جدید"
@@ -49,7 +49,7 @@ export const Home: React.FC = () => {
                   مشاهده تمام کاربران
                 </Button>
               </CardContent>
-            </Card>
+            </MainLayout>
           </Box>
           <Rightbar />
         </Stack>
