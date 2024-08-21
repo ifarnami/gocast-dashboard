@@ -1,9 +1,19 @@
-import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import { router } from "./router/Router";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import User from "./Pages/User";
+import { Home } from "./Pages/Home";
+import React from "react";
 
-const App = () => {
-  return <RouterProvider router={router} />;
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/User" element={<User />} />
+      </Routes>
+    </BrowserRouter>
+    
+  );
 };
 
 export default App;
