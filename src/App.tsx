@@ -1,18 +1,16 @@
 import "./App.css";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-import User from "./Pages/User";
-import { Home } from "./Pages/Home";
-import React from "react";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/Router";
+import CacheProvider  from "./provider/CacheProvider";
+import ThemeColorProvider from "./provider/ThemeColorProvider";
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/User" element={<User />} />
-      </Routes>
-    </BrowserRouter>
-    
+    <ThemeColorProvider>
+      <CacheProvider> 
+      <RouterProvider router={router} />
+      </CacheProvider>
+    </ThemeColorProvider>
   );
 };
 

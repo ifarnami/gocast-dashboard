@@ -45,13 +45,13 @@ const Sidebar: React.FC<SidebarProps> = ({ mode, setMode }) => {
         <ListItem disablePadding>
           <ListItemButton
             onClick={() => {
-              Navigate("/User");
+              Navigate("/users");
             }}
           >
             <ListItemIcon>
               <PeopleIcon />
             </ListItemIcon>
-            <ListItemText primary="Users" />
+            <ListItemText primary="users" />
           </ListItemButton>
         </ListItem>
         <Divider />
@@ -84,6 +84,7 @@ const Sidebar: React.FC<SidebarProps> = ({ mode, setMode }) => {
           </ListItemButton>
         </ListItem>
       </List>
+      
     </Box>
   );
 };

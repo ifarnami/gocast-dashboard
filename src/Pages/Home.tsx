@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Box,
   Stack,
-  Card,
   CardHeader,
   IconButton,
   CardContent,
@@ -15,11 +14,40 @@ import Navbar from "../components/Navbar";
 import Rightbar from "../components/Rightbar";
 import Sidebar from "../components/Sidebar";
 
+import MainLayout from "../layouts/mainLayout/MainLayout";
+import UserTable, { UserTableData } from "../components/UserTable/UserTable";
+
 type Mode = "light" | "dark";
+
+export const tableMockData: UserTableData[] = [
+  {
+    id: 1,
+    username: "John Doe",
+    created_at: "7/20/2024",
+    role: "66-1949148",
+  },
+  {
+    id: 2,
+    username: "Brig",
+    created_at: "3/23/2024",
+    role: "admin",
+  },
+  {
+    id: 3,
+    username: "Bradford",
+    created_at: "4/3/2024",
+    role: "user",
+  },
+  {
+    id: 4,
+    role: "user",
+    username: "Giorgi",
+    created_at: "10/8/2023",
+  },
+];
 
 export const Home: React.FC = () => {
   const [mode, setMode] = useState<Mode>("light");
-
   const theme = createTheme({
     direction: "rtl",
     palette: {
@@ -35,13 +63,17 @@ export const Home: React.FC = () => {
           <Sidebar setMode={setMode} mode={mode} />
           <Box>
             <Feed />
-            <Card sx={{ minWidth: 800, minHeight: "400px", padding: "40px" }}>
+            <MainLayout>
               <CardHeader
                 action={<IconButton aria-label="settings"></IconButton>}
                 title="کاربران جدید"
                 dir="rtl"
               ></CardHeader>
               <CardContent>
+                <UserTable
+                  tableData={tableMockData}
+                  tableHeaders={["ردیف", "نام کاربری", "تاریخ عضویت", "نقش"]}
+                />
                 <Button
                   sx={{ marginRight: "300px", marginTop: "300px" }}
                   variant="contained"
@@ -49,7 +81,7 @@ export const Home: React.FC = () => {
                   مشاهده تمام کاربران
                 </Button>
               </CardContent>
-            </Card>
+            </MainLayout>
           </Box>
           <Rightbar />
         </Stack>

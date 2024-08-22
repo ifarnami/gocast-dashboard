@@ -4,7 +4,6 @@ import {
   createTheme,
   Box,
   Stack,
-  Card,
   CardHeader,
   IconButton,
   CardContent,
@@ -15,6 +14,7 @@ import Navbar from "../components/Navbar";
 import Rightbar from "../components/Rightbar";
 import Sidebar from "../components/Sidebar";
 import Pagination from "@mui/material/Pagination";
+import MainLayout from "../layouts/mainLayout/MainLayout";
 
 type Mode = "light" | "dark";
 
@@ -35,7 +35,8 @@ export const User: React.FC = () => {
           <Sidebar setMode={setMode} mode={mode} />
           <Box>
             <Feed />
-            <Card sx={{ minWidth: 800, minHeight: "400px", padding: "40px" }}>
+            <MainLayout> 
+        
               <CardHeader
                 action={<IconButton aria-label="settings"></IconButton>}
                 title="جستجو و فیلتر"
@@ -43,11 +44,12 @@ export const User: React.FC = () => {
               ></CardHeader>
               <Divider />
               <CardContent>
-                <Stack spacing={1} marginTop={"400px"} marginRight={"400px"}>
+                <Stack spacing={1} marginTop={"300px"} marginRight={"400px"}>
                   <Pagination count={10} color="secondary" />
                 </Stack>
               </CardContent>
-            </Card>
+            
+</MainLayout>
           </Box>
           <Rightbar />
         </Stack>
