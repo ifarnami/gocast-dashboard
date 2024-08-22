@@ -15,6 +15,8 @@ import Rightbar from "../components/Rightbar";
 import Sidebar from "../components/Sidebar";
 import Pagination from "@mui/material/Pagination";
 import MainLayout from "../layouts/mainLayout/MainLayout";
+import UserTable from "../components/UserTable/UserTable";
+import { tableMockData } from "../constants/mockData";
 
 type Mode = "light" | "dark";
 
@@ -35,21 +37,23 @@ export const User: React.FC = () => {
           <Sidebar setMode={setMode} mode={mode} />
           <Box>
             <Feed />
-            <MainLayout> 
-        
+            <MainLayout>
               <CardHeader
                 action={<IconButton aria-label="settings"></IconButton>}
                 title="جستجو و فیلتر"
                 dir="rtl"
               ></CardHeader>
               <Divider />
+              <UserTable
+                tableData={tableMockData}
+                tableHeaders={["ردیف", "نام کاربری", "تاریخ عضویت", "نقش"]}
+              />
               <CardContent>
                 <Stack spacing={1} marginTop={"300px"} marginRight={"400px"}>
                   <Pagination count={10} color="secondary" />
                 </Stack>
               </CardContent>
-            
-</MainLayout>
+            </MainLayout>
           </Box>
           <Rightbar />
         </Stack>
